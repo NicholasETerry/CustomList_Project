@@ -68,21 +68,28 @@ namespace UnitTestProject1
 
         
         [TestMethod]
-        public void CustomAddMethod_TestCapacityIncrease_CapacityIncreaseToEight() //testing capacity when we add more than 4 items, capacity should be 8
+        public void CustomAddMethod_AddFiveItems_CapacityIncreaseToEight() //testing capacity when we add more than 4 items, capacity should be 8
         {
             //ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 8;
-            int testFill = 1;
+            //int testFill = 1;
             int actualResult;
 
             //ACT
-            for (int i = 0; i < newCustomList.holdingArray.Length/* will result in i being larger then array*/; i++) // need indexer due to protection level
-            {
-                newCustomList.holdingArray[i] = testFill;
-                testFill++;
-            }
-            actualResult = newCustomList.Count;
+            //for (int i = 0; i < newCustomList.holdingArray.Length/* will result in i being larger then array*/; i++) // need indexer due to protection level
+            //{
+            //    newCustomList.holdingArray[i] = testFill;
+            //    testFill++;
+            //}
+            newCustomList.CustomAdd(1);
+            newCustomList.CustomAdd(2);
+            newCustomList.CustomAdd(3);
+            newCustomList.CustomAdd(4);
+            newCustomList.CustomAdd(5);
+
+
+            actualResult = newCustomList.Capacity;
             //ARRANGE
             Assert.AreEqual(expectedResult, actualResult);
             
@@ -90,34 +97,52 @@ namespace UnitTestProject1
         [TestMethod]
         public void CustomAddMethod_TestItemIndexLocationWhenCapacityIncreases_IndexValuesHold() //when capacity increases to 8 , lets make sure that one of the values 
         {                                                                                        // is still in the right index
-            //ARRANGE
+                                                                                                 //ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
-            int[] beginningIndexes = new int[4];
-            int[] endingIndexes = new int[8];
-            int testFill = 1;
-            int expectedResult = 4;
-            int actualResult = 0;
+            int expectedResult; ;
+            int actualResult;
 
             //ACT
-            for (int i = 0; i < newCustomList.holdingArray.Length /* will result in i being larger then array*/; i++) // need indexer due to protection level
-            {
-                newCustomList.holdingArray[i] = testFill;
-                testFill++;
-                if(i < 4)
-                {
-                    beginningIndexes[i] = newCustomList.holdingArray[i];
-                }
-                endingIndexes[i] = newCustomList.holdingArray[i];
-            }
-            for (int i = 0; i < beginningIndexes.Length - 1; i++)
-            {
-                if(beginningIndexes[i] == endingIndexes[i])
-                {
-                    actualResult++;
-                }
-            }
+            newCustomList.CustomAdd(1);
+            expectedResult = newCustomList.holdingArray[0];
+            newCustomList.CustomAdd(2);
+            newCustomList.CustomAdd(3);
+            newCustomList.CustomAdd(4);
+            newCustomList.CustomAdd(5);
+
+
+            actualResult = newCustomList.holdingArray[0];
             //ARRANGE
             Assert.AreEqual(expectedResult, actualResult);
+            
+
+            //CustomList<int> newCustomList = new CustomList<int>();
+            //int[] beginningIndexes = new int[4];
+            //int[] endingIndexes = new int[8];
+            //int testFill = 1;
+            //int expectedResult = 4;
+            //int actualResult = 0;
+
+            ////ACT
+            //for (int i = 0; i < newCustomList.holdingArray.Length /* will result in i being larger then array*/; i++) // need indexer due to protection level
+            //{
+            //    newCustomList.holdingArray[i] = testFill;
+            //    testFill++;
+            //    if(i < 4)
+            //    {
+            //        beginningIndexes[i] = newCustomList.holdingArray[i];
+            //    }
+            //    endingIndexes[i] = newCustomList.holdingArray[i];
+            //}
+            //for (int i = 0; i < beginningIndexes.Length - 1; i++)
+            //{
+            //    if(beginningIndexes[i] == endingIndexes[i])
+            //    {
+            //        actualResult++;
+            //    }
+            //}
+            //ARRANGE
+            //Assert.AreEqual(expectedResult, actualResult);
         }
         
 
