@@ -9,14 +9,16 @@ namespace CustomListClass
     public class CustomList<T>
     {
         List<int> testList = new List<int>();
-        public T[] holdingArray;
-        public T[] tempArray;
+        private T[] holdingArray;
+        private T[] tempArray;
         int j;
+        public T actualResult;
         public CustomList()
         {
             j = 4;
             holdingArray = new T[j]; // need a generic because a list could hold any object of the same type.
         }
+
         public void CustomAdd(T itemToAdd)
         {
             bool isNull = false;
@@ -24,10 +26,11 @@ namespace CustomListClass
             {
                 for (int i = 0; i < holdingArray.Length-1; i++)
                 {
-                    if(holdingArray[i] == null)
+                    if(holdingArray[i] == null ||  Convert.ToInt32(holdingArray[i]) == 0)
                     {
                         holdingArray[i] = itemToAdd;
                         isNull = true;
+                        break;
                     }
                     else if(holdingArray[i] != null)
                     {
@@ -47,6 +50,7 @@ namespace CustomListClass
                             holdingArray[holding] = tempArray[holding];
                         }
                         isNull = true;
+                        break;
                     }
                 }
             }

@@ -1,0 +1,14 @@
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\TestAddClass.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\TestAddClass.pdb
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\obj\Debug\TestAddClass.csprojAssemblyReference.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\obj\Debug\TestAddClass.csproj.CoreCompileInputs.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\obj\Debug\TestAddClass.csproj.CopyComplete
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\obj\Debug\TestAddClass.dll
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\TestAddClass\obj\Debug\TestAddClass.pdb

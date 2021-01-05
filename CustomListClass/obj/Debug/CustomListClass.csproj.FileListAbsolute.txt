@@ -1,0 +1,7 @@
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe.config
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\bin\Debug\CustomListClass.pdb
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csprojAssemblyReference.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csproj.CoreCompileInputs.cache
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\obj\Debug\CustomListClass.exe
+C:\Users\Nicholas\Desktop\DevCode\Thulium\CustomListClass\CustomListClass\obj\Debug\CustomListClass.pdb

@@ -10,6 +10,10 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
+            List<int> testList = new List<int>();
+            int firstIndex = testList[0];
+            Console.WriteLine(firstIndex);
+            Console.ReadLine();
         }
     }
 }
