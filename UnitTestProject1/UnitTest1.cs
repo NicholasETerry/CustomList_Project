@@ -9,17 +9,7 @@ namespace UnitTestProject1
     {
         // As a developer, i want the ability to add an object to an instance of my custom-built list class by imitating the C# Add() method.
         //-----
-        public int this[int index] // indexer
-        {
-            get
-            {
-                return newCustomList.holdingArray[0];
-            }
-            set
-            {
-                actualResult = holdingArray[index];
-            }
-        }
+
         [TestMethod]
         public void CustomAddMethod_IndexValueForAddedItem_ReturnFirstPositionInIndexValue() // return index postion of item added 
         {
@@ -30,7 +20,7 @@ namespace UnitTestProject1
             int actualResult;
             // ACT
             newCustomList.CustomAdd(value1);
-            actualResult = newCustomList[0];
+            actualResult = newCustomList.HoldingArray[0];
 
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -41,7 +31,7 @@ namespace UnitTestProject1
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 4;
-            int actualResult = newCustomList.capacity; // Capacity will need to be created in CustomList
+            int actualResult = newCustomList.Capacity; 
 
             // ACT
             // should just need two variables to determine if expected is the same as the capacity.
@@ -56,7 +46,7 @@ namespace UnitTestProject1
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 1;
-            int actualResult; // Count needs to be created in CustomList
+            int actualResult;
 
             // ACT
             newCustomList.CustomAdd(1);
@@ -73,26 +63,18 @@ namespace UnitTestProject1
             //ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 8;
-            //int testFill = 1;
             int actualResult;
 
             //ACT
-            //for (int i = 0; i < newCustomList.holdingArray.Length/* will result in i being larger then array*/; i++) // need indexer due to protection level
-            //{
-            //    newCustomList.holdingArray[i] = testFill;
-            //    testFill++;
-            //}
             newCustomList.CustomAdd(1);
             newCustomList.CustomAdd(2);
             newCustomList.CustomAdd(3);
             newCustomList.CustomAdd(4);
             newCustomList.CustomAdd(5);
 
-
             actualResult = newCustomList.Capacity;
             //ARRANGE
-            Assert.AreEqual(expectedResult, actualResult);
-            
+            Assert.AreEqual(expectedResult, actualResult);           
         }
         [TestMethod]
         public void CustomAddMethod_TestItemIndexLocationWhenCapacityIncreases_IndexValuesHold() //when capacity increases to 8 , lets make sure that one of the values 
@@ -109,39 +91,9 @@ namespace UnitTestProject1
             newCustomList.CustomAdd(4);
             newCustomList.CustomAdd(5);
 
-
-            actualResult = newCustomList.holdingArray[0];
+            actualResult = newCustomList.HoldingArray[0];
             //ARRANGE
             Assert.AreEqual(expectedResult, actualResult);
-            
-
-            //CustomList<int> newCustomList = new CustomList<int>();
-            //int[] beginningIndexes = new int[4];
-            //int[] endingIndexes = new int[8];
-            //int testFill = 1;
-            //int expectedResult = 4;
-            //int actualResult = 0;
-
-            ////ACT
-            //for (int i = 0; i < newCustomList.holdingArray.Length /* will result in i being larger then array*/; i++) // need indexer due to protection level
-            //{
-            //    newCustomList.holdingArray[i] = testFill;
-            //    testFill++;
-            //    if(i < 4)
-            //    {
-            //        beginningIndexes[i] = newCustomList.holdingArray[i];
-            //    }
-            //    endingIndexes[i] = newCustomList.holdingArray[i];
-            //}
-            //for (int i = 0; i < beginningIndexes.Length - 1; i++)
-            //{
-            //    if(beginningIndexes[i] == endingIndexes[i])
-            //    {
-            //        actualResult++;
-            //    }
-            //}
-            //ARRANGE
-            //Assert.AreEqual(expectedResult, actualResult);
         }
         
 
