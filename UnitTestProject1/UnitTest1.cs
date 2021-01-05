@@ -56,11 +56,11 @@ namespace UnitTestProject1
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 1;
-            int actualResult = newCustomList.Count; // Count needs to be created in CustomList
+            int actualResult; // Count needs to be created in CustomList
 
             // ACT
-            // should just need two variables to determine if expected is the same as the count.
-            // no logic needed in the ACT stage.
+            newCustomList.CustomAdd(1);
+            actualResult = newCustomList.Count;
 
             // ARRANGE
             Assert.AreEqual(expectedResult, actualResult);
@@ -99,12 +99,11 @@ namespace UnitTestProject1
         {                                                                                        // is still in the right index
                                                                                                  //ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
-            int expectedResult; ;
+            int expectedResult = 1; 
             int actualResult;
 
             //ACT
             newCustomList.CustomAdd(1);
-            expectedResult = newCustomList.holdingArray[0];
             newCustomList.CustomAdd(2);
             newCustomList.CustomAdd(3);
             newCustomList.CustomAdd(4);
