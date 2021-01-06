@@ -22,7 +22,7 @@ namespace UnitTestProject1
             
             // ACT
             newCustomList.CustomAdd(value1);
-            actualResult = newCustomList.HoldingArray[0];
+            actualResult = newCustomList[0];
 
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -93,7 +93,7 @@ namespace UnitTestProject1
             newCustomList.CustomAdd(4);
             newCustomList.CustomAdd(5);
 
-            actualResult = newCustomList.HoldingArray[0];
+            actualResult = newCustomList[0];
             //ARRANGE
             Assert.AreEqual(expectedResult, actualResult);
         }

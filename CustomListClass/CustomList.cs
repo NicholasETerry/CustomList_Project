@@ -9,22 +9,24 @@ namespace CustomListClass
     public class CustomList<T>
     {
         // MEMBER VARIABLES (HAVE A)
-        List<int> testList = new List<int>();
+        // List<int> testList = new List<int>();
         private T[] holdingArray;
         private T[] tempArray;
         private int capacity;
         private int count;
         private int j;
         // PROPERTIES (GET:SET)
-        public T[] HoldingArray // indexer
+        public T this[int i] // indexer
         {
-            get => holdingArray;
+            get => holdingArray[i];
+            set => holdingArray[i] = value;
+
         }
-        public int Capacity
+        public int Capacity // property
         {
             get => capacity;
         }
-        public int Count
+        public int Count  // property
         {
             get => count;
         }
@@ -73,6 +75,10 @@ namespace CustomListClass
                     }
                 }
             }
+        }
+        public void CustomRemove(T itemToRemove)
+        {
+
         }
     }
 

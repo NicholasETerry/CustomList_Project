@@ -24,8 +24,8 @@ namespace UnitTestProject1
             // ACT
             newCustomList.CustomAdd(1);
             newCustomList.CustomAdd(5);
-            newCustomList.CustomRemove(newCustomList.HoldingArray);
-            actualResult = newCustomList.HoldingArray[0];
+            newCustomList.CustomRemove(1);
+            actualResult = newCustomList[0];
             // ASSERT
             Assert.AreNotEqual(expectedResult, actualResult);
         }
@@ -39,8 +39,8 @@ namespace UnitTestProject1
             // ACT
             newCustomList.CustomAdd(1);
             newCustomList.CustomAdd(5);
-            newCustomList.CustomRemove(newCustomList.HoldingArray);
-            actualResult = newCustomList.HoldingArray[0];
+            newCustomList.CustomRemove(1);
+            actualResult = newCustomList[0];
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
@@ -57,7 +57,7 @@ namespace UnitTestProject1
             newCustomList.CustomAdd(15);
             newCustomList.CustomAdd(22);
             newCustomList.CustomAdd(45);
-            newCustomList.CustomRemove(newCustomList.HoldingArray);
+            newCustomList.CustomRemove(1);
             actualResult = newCustomList.Count;
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -75,20 +75,25 @@ namespace UnitTestProject1
             newCustomList.CustomAdd(15);
             newCustomList.CustomAdd(22);
             newCustomList.CustomAdd(45);
-            newCustomList.CustomRemove(newCustomList.HoldingArray);
+            newCustomList.CustomRemove(1);
             actualResult = newCustomList.Capacity;
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        public void CustomRemoveMethod_IsThereAnItemToRemove_ReturnFalse() // 5. check to see if there is an item to remove from list
+        public void CustomRemoveMethod_IsThereAnItemToRemove_ReturnFour() // 5. check to see if there is an item to remove from list
         {
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
-            int expectedResult = 0;
+            int expectedResult = 4;
             int actualResult;
             // ACT
-            newCustomList.CustomRemove(newCustomList.HoldingArray);
+            newCustomList.CustomAdd(5);
+            newCustomList.CustomAdd(15);
+            newCustomList.CustomAdd(22);
+            newCustomList.CustomAdd(45);
+            newCustomList.CustomRemove(1);
+            actualResult = newCustomList.Count;
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
