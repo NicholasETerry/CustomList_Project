@@ -18,6 +18,8 @@ namespace UnitTestProject1
             int expectedResult = 5;
             int value1 = 5;
             int actualResult;
+            
+            
             // ACT
             newCustomList.CustomAdd(value1);
             actualResult = newCustomList.HoldingArray[0];
@@ -79,7 +81,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void CustomAddMethod_TestItemIndexLocationWhenCapacityIncreases_IndexValuesHold() //when capacity increases to 8 , lets make sure that one of the values 
         {                                                                                        // is still in the right index
-                                                                                                 //ARRANGE
+            //ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
             int expectedResult = 1; 
             int actualResult;

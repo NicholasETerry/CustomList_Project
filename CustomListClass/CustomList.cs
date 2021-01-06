@@ -14,7 +14,7 @@ namespace CustomListClass
         private T[] tempArray;
         private int capacity;
         private int count;
-        int j;
+        private int j;
         // PROPERTIES (GET:SET)
         public T[] HoldingArray // indexer
         {
@@ -52,7 +52,7 @@ namespace CustomListClass
                         count++;
                         break;
                     }
-                    else if(holdingArray[i] != null || Convert.ToInt32(holdingArray[i]) == 0)
+                    else if(holdingArray[i] != null || Convert.ToInt32(holdingArray[i]) == 0) // reExamine what is happening here
                     {
                         
                     }
