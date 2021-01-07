@@ -15,11 +15,11 @@ namespace UnitTestProject1
         //-----
         
         [TestMethod]
-        public void CustomRemoveMethod_RemoveFirstItemInList_NullOrZero() // 1. remove item and check that item was removed
+        public void CustomRemoveMethod_RemoveFirstAccurenceInList_RemoveValueOfOne() // 1. remove item and check that item was removed
         {
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
-            int expectedResult = 1;
+            int expectedResult = 5;
             int actualResult;
             // ACT
             newCustomList.CustomAdd(1);
@@ -27,7 +27,7 @@ namespace UnitTestProject1
             newCustomList.CustomRemove(1);
             actualResult = newCustomList[0];
             // ASSERT
-            Assert.AreNotEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
         public void CustomRemoveMethod_CheckIndexValuesAfterItemRemoved_IndexOneEqualIndexZero() // 2. remove item and make sure that other items in list indexes change
@@ -81,18 +81,18 @@ namespace UnitTestProject1
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
-        public void CustomRemoveMethod_IsThereAnItemToRemove_ReturnFour() // 5. check to see if there is an item to remove from list
+        public void CustomRemoveMethod_IsThereAnItemToRemove_ReturnThree() // 5. check to see if there is an item to remove from list
         {
             // ARRANGE
             CustomList<int> newCustomList = new CustomList<int>();
-            int expectedResult = 4;
+            int expectedResult = 3;
             int actualResult;
             // ACT
             newCustomList.CustomAdd(5);
             newCustomList.CustomAdd(15);
             newCustomList.CustomAdd(22);
             newCustomList.CustomAdd(45);
-            newCustomList.CustomRemove(1);
+            newCustomList.CustomRemove(5);
             actualResult = newCustomList.Count;
             // ASSERT
             Assert.AreEqual(expectedResult, actualResult);

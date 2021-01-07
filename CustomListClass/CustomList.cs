@@ -78,7 +78,48 @@ namespace CustomListClass
         }
         public void CustomRemove(T itemToRemove)
         {
+            // MEMBER VARIABLE ( HAVE A )
+            tempArray = new T[j];
+            T itemForRemove = itemToRemove;
+            int k = 0;
+            int capacitySetter;
+            // PROPERTIES ( GET : SET )
 
+            // CONSTRUCTOR ( SPAWNER )
+
+
+            // MEMBER METHOD ( CAN DO )
+            for (int i = 0; i < holdingArray.Length; i++)
+            {
+                if (Convert.ToInt32(holdingArray[i]) == Convert.ToInt32(itemForRemove))
+                {
+                    count -= 1;
+                    // itemForRemove = default(T);
+                }
+
+                else if(Convert.ToInt32(holdingArray[i]) != Convert.ToInt32(itemForRemove))
+                {
+                    tempArray[k] = holdingArray[i];
+                    k++;
+                }
+                
+            }
+            capacitySetter = count / 4;
+            if (capacitySetter <= 1)
+            {
+                capacitySetter = 4;
+            }
+            else if (capacitySetter >= 2)
+            {
+                capacitySetter *= 4; 
+            }
+            holdingArray = new T[capacitySetter];
+
+            for (int i = 0; i < holdingArray.Length; i++)
+            {
+                holdingArray[i] = tempArray[i];
+            }
+            capacity = capacitySetter;
         }
     }
 

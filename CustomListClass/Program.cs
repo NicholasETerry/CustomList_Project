@@ -15,6 +15,7 @@ namespace CustomListClass
             newList.CustomAdd(20);
             newList.CustomAdd(1);
             newList.CustomAdd(5);
+            newList.CustomRemove(10);
             newList.CustomAdd(16);
 
             Console.ReadLine();
