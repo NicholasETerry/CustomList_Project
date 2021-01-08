@@ -1,1 +1,29 @@
-﻿
+﻿------CustomList<T> Operator - override Method -------
+
+**** This override Method will take two parameters. It will compair those two parameters and modify 
+the first parameter by removing Objects of equal value that are present in both parameters. ****
+
+Syntax :     public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
+
+Parameters : customList, customList (CustomList<T>)
+			 
+			 The first Parameter values are compaired to the second Parameter values
+
+Return type: CustomList<T>
+
+			 Will return first Parameter CustomList<T> 
+
+Example : 
+
+            CustomList<int> newOne = new CustomList<int>();
+            newOne.CustomAdd(1);
+            newOne.CustomAdd(3);
+            newOne.CustomAdd(5);
+
+            CustomList<int> newTwo = new CustomList<int>();
+            newTwo.CustomAdd(2);
+            newTwo.CustomAdd(1);
+            newTwo.CustomAdd(6);
+
+            Console.WriteLine(newOne - newTwo);  // OUTPUT 3,5
+            Console.ReadLine();
