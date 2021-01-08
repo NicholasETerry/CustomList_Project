@@ -18,6 +18,20 @@ namespace CustomListClass
             newList.CustomRemove(10);
             newList.CustomAdd(16);
 
+            Console.WriteLine(newList.ToString());
+            Console.ReadLine();
+
+            CustomList<int> one = new CustomList<int>();
+            one.CustomAdd(1);
+            one.CustomAdd(3);
+            one.CustomAdd(5);
+
+            CustomList<int> two = new CustomList<int>();
+            two.CustomAdd(2);
+            two.CustomAdd(4);
+            two.CustomAdd(6);
+
+            Console.WriteLine(one + two);
             Console.ReadLine();
         }
     }
