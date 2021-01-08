@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,33 +7,29 @@ using System.Threading.Tasks;
 
 namespace CustomListClass
 {
-    public class CustomList<T> 
+    public class CustomList<T> : IEnumerable<T>
     {
-        List<int> testList = new List<int>();
-        // MEMBER VARIABLES (HAVE A)
         private T[] holdingArray;
         private int capacity;
         private int count;
-        // PROPERTIES (GET:SET)
-        public T this[int i] // indexer
+        public T this[int i]
         {
             get => holdingArray[i];
             set => holdingArray[i] = value;
         }
-        public int Capacity // property
+        public int Capacity
         {
             get => capacity;
         }
-        public int Count  // property
+        public int Count
         {
             get => count;
         }
-        // CONSTRUCTOR (SPAWNER)
         public CustomList()
         {
             capacity = 4;
             count = 0;
-            holdingArray = new T[capacity]; // need a generic because a list could hold any object of the same type.
+            holdingArray = new T[capacity];
         }
         public void CustomAdd(T itemToAdd)
         {
@@ -106,8 +103,33 @@ namespace CustomListClass
             return result;
         }
         public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
+        { 
+            foreach (var item in listTwo)
+            {
+                if(listOne.Contains(item))
+                {
+                    listOne.CustomRemove(item);
+                }
+            }
+            return listOne;
+        }
+        public CustomList<T> Zip(CustomList<T> evenZip)
+        {          
+            CustomList<T> Zipped = new CustomList<T>();
+            for (int i = 0; i < count; i++)
+            {
+                Zipped.CustomAdd(holdingArray[i]);
+                Zipped.CustomAdd(evenZip[i]);
+            }
+            return Zipped;
+        }
+        public IEnumerator<T> GetEnumerator()
         {
-
+            return ((IEnumerable<T>)holdingArray).GetEnumerator();
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return holdingArray.GetEnumerator();
         }
     }
 
