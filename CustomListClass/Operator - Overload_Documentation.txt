@@ -16,14 +16,14 @@ Return type: CustomList<T>
 Example : 
 
             CustomList<int> newOne = new CustomList<int>();
-            newOne.CustomAdd(1);
-            newOne.CustomAdd(3);
-            newOne.CustomAdd(5);
+            newOne.Add(1);
+            newOne.Add(3);
+            newOne.Add(5);
 
             CustomList<int> newTwo = new CustomList<int>();
-            newTwo.CustomAdd(2);
-            newTwo.CustomAdd(1);
-            newTwo.CustomAdd(6);
+            newTwo.Add(2);
+            newTwo.Add(1);
+            newTwo.Add(6);
 
             Console.WriteLine(newOne - newTwo);  // OUTPUT 3,5
             Console.ReadLine();

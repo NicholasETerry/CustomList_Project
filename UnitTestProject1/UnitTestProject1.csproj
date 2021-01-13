@@ -49,9 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UintTest3.cs" />
-    <Compile Include="UnitTest2.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="AddMethodStringTests.cs" />
+    <Compile Include="RemoveMethodStringTests.cs" />
+    <Compile Include="CustomOperatorTests.cs" />
+    <Compile Include="ZipMethodStringTests.cs" />
+    <Compile Include="ZipMethodIntTests.cs" />
+    <Compile Include="RemoveMethodIntTests.cs" />
+    <Compile Include="AddMethodIntTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

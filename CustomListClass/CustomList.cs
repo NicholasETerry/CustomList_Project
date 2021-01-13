@@ -14,12 +14,26 @@ namespace CustomListClass
         private int count;
         public T this[int i]
         {
-            get => holdingArray[i];
-            set => holdingArray[i] = value;
+            get
+            {
+                if (i <= count - 1 || i == 0) // Add conditional for out of range 
+                {
+                    return holdingArray[i];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+            set
+            {
+                holdingArray[i] = value;
+            }
         }
-        public int Capacity
+        public int Capacity                 // add set 
         {
             get => capacity;
+            set => capacity = value;            
         }
         public int Count
         {
@@ -31,7 +45,7 @@ namespace CustomListClass
             count = 0;
             holdingArray = new T[capacity];
         }
-        public void CustomAdd(T itemToAdd)
+        public void Add(T itemToAdd)
         {
             if(count == capacity)
             {
@@ -58,7 +72,7 @@ namespace CustomListClass
             }
             return arrayToGetValue;
         }
-        public bool CustomRemove(T itemToRemove)
+        public bool Remove(T itemToRemove)
         {
             int k = 0;
             bool isRemoved = false;
@@ -82,51 +96,95 @@ namespace CustomListClass
         }
         public override string ToString()
         {
-            string itemToString = "";
+            StringBuilder itemToString = new StringBuilder(); // Using StringBuilder instead of adding a new char every time to a string var.
             for (int i = 0; i < count; i++)
             {
-               itemToString += holdingArray[i].ToString();
+                itemToString.Append(holdingArray[i]);
             }
-            return itemToString;
+            
+            return itemToString.ToString();
         }
         public static CustomList<T> operator + (CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList <T> result = new CustomList<T>();
             for (int i = 0; i < listOne.count; i++)
             {
-                result.CustomAdd(listOne[i]);
+                result.Add(listOne[i]);
             }
             for (int i = 0; i < listTwo.count; i++)
             {
-                result.CustomAdd(listTwo[i]);
+                result.Add(listTwo[i]);
             }
             return result;
         }
         public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
-        { 
+        {
+            CustomList<T> result = new CustomList<T>(); // added result list for return instead of modifying listOne.
             foreach (var item in listTwo)
             {
-                if(listOne.Contains(item))
+                if(listOne.Equals(item)) // replaced Contains() with Equals()
                 {
-                    listOne.CustomRemove(item);
+                    result.Add(item);
                 }
             }
-            return listOne;
+            return result;
         }
-        public CustomList<T> Zip(CustomList<T> evenZip)
-        {          
+        public CustomList<T> Zip(CustomList<T> evenZip) // allow for unequal parameter list sizes
+        {
+            if (count.Equals(evenZip.count))
+            {
+                return ZipperEquals(evenZip);
+            }
+            else
+            {
+                return ZipperDoesnotEqual(evenZip);
+            }
+        }
+        public CustomList<T> ZipperEquals(CustomList<T> inputToZip) // created zipperEquals method to handle logic
+        {
             CustomList<T> Zipped = new CustomList<T>();
             for (int i = 0; i < count; i++)
             {
-                Zipped.CustomAdd(holdingArray[i]);
-                Zipped.CustomAdd(evenZip[i]);
+                Zipped.Add(holdingArray[i]);
+                Zipped.Add(inputToZip.holdingArray[i]);
             }
             return Zipped;
         }
+        public CustomList<T> ZipperDoesnotEqual(CustomList<T> inputToZip) // created zipperDoesntEqual method to handle logic
+        {
+            CustomList<T> Zipped = new CustomList<T>();
+            if(count > inputToZip.count)
+            {
+                for (int i = 0; i < inputToZip.count; i++)
+                {
+                    Zipped.Add(holdingArray[i]);
+                    Zipped.Add(inputToZip.holdingArray[i]);
+                }
+                for (int i = inputToZip.count; i < count; i++)
+                {
+                    Zipped.Add(holdingArray[i]);
+                }
+            }
+            else if (count < inputToZip.count)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    Zipped.Add(holdingArray[i]);
+                    Zipped.Add(inputToZip.holdingArray[i]);
+                }
+                for (int i = count; i < inputToZip.count; i++)
+                {
+                    Zipped.Add(inputToZip.holdingArray[i]);
+                }
+            }
+            return Zipped;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)holdingArray).GetEnumerator();
         }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return holdingArray.GetEnumerator();
